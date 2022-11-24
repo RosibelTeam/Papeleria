@@ -1,0 +1,20 @@
+{
+  "name": "papeleria",
+  "version": "1.0.0",
+  "description": "Repositorio para proyecto Papelería en Línea Huauchinango\r holita calaverita\r Hola Juan",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RosibelTeam/Papeleria.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RosibelTeam/Papeleria/issues"
+  },
+  "homepage": "https://github.com/RosibelTeam/Papeleria#readme"
+}
