@@ -1,30 +1,18 @@
 const {createPool} = require('mysql2/promise')
 
+PORT = process.env.PORT || 3000
+DB_HOST = process.env.DB_HOST || 'localhost'
+DB_USER = process.env.DB_USER || 'root'
+DB_PASSWORD = process.env.DB_PASSWORD || ''
+DB_NAME = process.env.DB_NAME || 'papeleriahuauchinango'
+DB_PORT = process.env.DB_PORT || 3306
+
 const pool = createPool({
-    host:'localhost',
-    user:'root',
-    password:'',
-    port:3306,
-    database:'papeleriahuauchinango'
+  user: DB_USER,
+  password: DB_PASSWORD,
+  host: DB_HOST,
+  port: DB_PORT,
+  database: DB_NAME
 })
-
-pool.getConnection((err, connection) => {
-  if (err) {
-    if (err.code === 'PROTOCOL_CONNECTION_LOST') {
-      console.error('Database connection was closed.');
-    }
-    if (err.code === 'ER_CON_COUNT_ERROR') {
-      console.error('Database has to many connections');
-    }
-    if (err.code === 'ECONNREFUSED') {
-      console.error('Database connection was refused');
-    }
-  }
-
-  if (connection) connection.release();
-  console.log('DB is Connected');
-
-  return;
-});
 
 module.exports = pool
